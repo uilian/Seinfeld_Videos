@@ -19,7 +19,8 @@ LIST_FILE=$DOWN_DIR$BASE_NAME$DATE$EXTENSION
 
 # Extract the urls and file names from the webpage and 
 # generates the download list of the day
-wget -qO- http://www.jerryseinfeld.com  | awk '/#today/' | sed -e 's/^.*{//g' | sed -e 's/}.*$//g'| sed 's/\\//g'| cut -d"," -f1,6 | cut -d"\"" -f4,8 | sed -e 's/ /\_/g' |sed -e 's/\"/.mp4 /' >  $LIST_FILE 
+wget -qO- http://www.jerryseinfeld.com  | awk '/#today/' | sed -e 's/^.*{//g' | sed -e 's/}.*$//g'| sed 's/\\//g' | sed 's/, / /g'| cut -d"," -f1,6 | cut -d"\"" -f4,8 | sed -e 's/ /\_/g' |sed -e 's/\"/.mp4 /' >  $LIST_FILE
+
 
 echo
 echo "* Download list was saved to "$LIST_FILE 
@@ -33,6 +34,6 @@ echo "* Processing ..."
 echo
 cd $DOWN_DIR
 # Execute the download commands
-cat $LIST_FILE | awk '{print "wget -qO",$1," ",$2}' | while read line; do $( echo "$line" ); done
+cat $LIST_FILE | awk '{print "wget -O",$1," ",$2}' | while read line; do $( echo "$line" ); done
 
 echo "* Done!"
