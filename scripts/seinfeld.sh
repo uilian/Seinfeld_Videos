@@ -7,7 +7,7 @@
 # download the daily videos from www.jerryseinfeld.com 
 # without the need to  remember to do that every day. 
 # Hope you enjoy it! 
-# Use at you own risk.
+# Use it at your own risk.
 #########################################################
 
 BASE_NAME=VIDEOS_
