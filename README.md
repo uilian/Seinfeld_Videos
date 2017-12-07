@@ -1,5 +1,5 @@
-# Seinfeld_Videos
-Scan and downloads videos posted on www.jerryseinfeld.com
+# Seinfeld Videos
+Find and downloads videos posted on www.jerryseinfeld.com.
 
 # Important: 
-## the site changed, and now it doesn't has any videos for download. 
+## The site changed in 2017, and now it doesn't has any videos for download. I'll keep the script here as a reference for web-scraping using just a shell script :)
